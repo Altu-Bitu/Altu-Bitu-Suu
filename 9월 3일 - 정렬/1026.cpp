@@ -14,7 +14,7 @@ void printArr(int N) {
         cout << B[i] << ' ';
     cout << '\n';
 }
-bool compare(int i, int j){
+bool compare(const int &i, const int &j){
     return j < i;
 }
 int main(){

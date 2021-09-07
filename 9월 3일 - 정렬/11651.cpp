@@ -16,7 +16,7 @@ void printLocation(int N){
         cout << coordinate[i].x << ' ' << coordinate[i].y << "\n";
     }
 }
-bool compare(location A, location B){
+bool compare(const location &A, const location &B){
     if(A.y != B.y)
         return A.y < B.y;
     return A.x < B.x;

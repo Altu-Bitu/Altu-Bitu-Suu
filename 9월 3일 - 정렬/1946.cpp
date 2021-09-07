@@ -29,9 +29,7 @@ int main(){
         sort(emp.begin(), emp.end(), compare);
         int standard = emp[0].interview;
         for(int j = 1 ; j < N ; j++){
-            if(emp[j].interview > standard){
-            }
-            else{
+            if(emp[j].interview <= standard){
                 total++;
                 standard = emp[j].interview;
             }
