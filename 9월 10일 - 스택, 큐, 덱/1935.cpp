@@ -45,7 +45,6 @@ int main(){
                     break;
             }
         }
-
         if (i == line.size() - 1)
             break;
 
