@@ -24,25 +24,23 @@ int main(){
                 S.insert(n);
                 m[n]++;
             }else{ //DT='D'
-                if(S.empty()){//컨테이너가 비었으면 연산 무시
+                if(S.empty())//컨테이너가 비었으면 연산 무시
                     continue;
-                } else{
-                    if(n == -1){ //최솟값 삭제 연산
-                        long long min = *S.begin();
-                        if(m[min]>1){ // 최솟값이 여러개 있으면 그냥 하나 줄이고 끝
-                            m[min]--;
-                        }else{// 최솟값이 하나 있으면 삭제
-                            S.erase(min);
-                            m[min]--;
-                        }
-                    }else{ // n==1
-                        long long max = *(--S.end());
-                        if(m[max]>1){ // 최댓값이 여러개 있으면 그냥 하나 줄이고 끝
-                            m[max]--;
-                        }else{// 최댓값이 하나 있으면 삭제
-                            S.erase(max);
-                            m[max]--;
-                        }
+                if(n == -1){ //최솟값 삭제 연산
+                    long long min = *S.begin();
+                    if(m[min]>1){ // 최솟값이 여러개 있으면 그냥 하나 줄이고 끝
+                        m[min]--;
+                    }else{// 최솟값이 하나 있으면 삭제
+                        S.erase(min);
+                        m[min]--;
+                    }
+                }else{ // n==1
+                    long long max = *(--S.end());
+                    if(m[max]>1){ // 최댓값이 여러개 있으면 그냥 하나 줄이고 끝
+                        m[max]--;
+                    }else{// 최댓값이 하나 있으면 삭제
+                        S.erase(max);
+                        m[max]--;
                     }
                 }
             }

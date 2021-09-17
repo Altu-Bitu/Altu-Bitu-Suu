@@ -9,9 +9,7 @@ public:
     int operator()(const int &i1, const int &i2){
         if(abs(i1)!=abs(i2))
             return abs(i1) > abs(i2);
-        else{
-            return i1 > i2;
-        }
+        return i1 > i2;
     }
 };
 

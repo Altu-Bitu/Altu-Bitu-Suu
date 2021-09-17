@@ -11,8 +11,8 @@ int main(){
     cin.tie(NULL);
     int n, m;
     cin >> n >> m;
-    vector<int> minM;
-    minM.assign(n, 0);
+    vector<int> min_m;
+    min_m.assign(n, 0);
     for(int j = 0 ; j < n ; j++){
         int p, l;
         cin >> p >> l;
@@ -30,15 +30,15 @@ int main(){
             }
             pq.pop();
         }
-        minM[j]=pq.top(); //해당과목에 들어갈 수 있는 최소 마일리지
+        min_m[j]=pq.top(); //해당과목에 들어갈 수 있는 최소 마일리지
     }
 
-    sort(minM.begin(), minM.end()); //마일리지 적게 드는 순으로 정렬
+    sort(min_m.begin(), min_m.end()); //마일리지 적게 드는 순으로 정렬
 
     int count = 0;
     int j = 0;
     while(1){
-        m-=minM[j];
+        m-=min_m[j];
         if(m<0) break; //마일리지를 다 썼다면
         count++;
         if(count==n) break; //갖고있는 마일리지가 많아서 전과목을 들을 수 있다면

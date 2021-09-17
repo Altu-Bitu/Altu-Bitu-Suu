@@ -13,9 +13,8 @@ public:
     int operator()(const cl &i1, const cl &i2){
         if(i1.S != i2.S) //시작시간이 다르면 빠른 순대로
             return i1.S > i2.S;
-        else{ //시작 시간이 같으면 끝나는 시간이 빠른 대로
-            return i1.T > i2.T;
-        }
+         //시작 시간이 같으면 끝나는 시간이 빠른 대로
+        return i1.T > i2.T;
     }
 };
 
@@ -38,12 +37,8 @@ int main(){
     while(!pq.empty()){
         cl a = pq.top();
         pq.pop(); // 하나 꺼냄
-        if(answer.top() > a.S){
-            answer.push(a.T);
-        }else{
-            answer.pop();
-            answer.push(a.T);
-        }
+        if(answer.top() <= a.S) answer.pop();
+        answer.push(a.T);
     }
     cout << answer.size();
 

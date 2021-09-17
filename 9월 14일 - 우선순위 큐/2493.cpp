@@ -23,10 +23,8 @@ int main(){
         }else{
         //스택에 뭐가 들어있음
             if(larger.top() < height){ // 스택 맨 위보다 입력값이 큼
-                while(!larger.empty()){ // 스택에서 입력값보다 큰 값만 남을때까지 다 뺌
-                    if(larger.top() < height)
-                        larger.pop();
-                    else break;
+                while(!larger.empty() && larger.top() < height){ // 스택에서 입력값보다 큰 값만 남을때까지 다 뺌
+                    larger.pop();
                 }
                 //다 뺐더니 비었음
                 if(larger.empty()) cout << 0 << " ";
