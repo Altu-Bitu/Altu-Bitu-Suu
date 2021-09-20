@@ -1,13 +1,13 @@
 //11723 집합
 #include <iostream>
-#include <set>
-
+#include <vector>
 using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    set<int> S;
+    vector<int> S;
+    S.assign(21, 0);
     int N;
     cin >> N;
     while(N--){
@@ -16,21 +16,25 @@ int main() {
         int x;
         if(cal!="all"&&cal!="empty") cin >> x;
         if(cal=="add"){
-            S.insert(x);
+            S[x]++;
         }else if(cal=="remove"){
-            S.erase(x);
+            S[x]--;
         }else if(cal=="check"){
-            if(S.find(x)!=S.end()){
+            if(S[x]>0){
                 cout << 1 << "\n";
             }else cout << 0 << "\n";
         }else if(cal=="toggle"){
-            if(S.find(x)!=S.end()){
-                S.erase(x);
-            }else S.insert(x);
+            if(S[x]>0){
+                S[x]--;
+            }else S[x]++;
         }else if(cal=="all"){
-            S={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+            for(int i = 1 ; i < 21 ; i++){
+                S[i]=1;
+            }
         }else if(cal=="empty"){
-            S={};
+            for(int i = 1 ; i < 21 ; i++){
+                S[i]=0;
+            }
         }
     }
 
