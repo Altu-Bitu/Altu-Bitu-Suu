@@ -14,7 +14,7 @@ int upperBound(int left, int right) {
     while (left <= right) { //left 포인터가 right 포인터보다 뒤에 있으면 break
         int mid = (left + right) / 2; //중간값
 
-        int num = 0; // num: mid로 나누어줄 수 수 있는 과자 개수
+        int num = 0; // num: mid로 나누어줄 수 있는 과자 개수
         for(int i = N-1; i>=0 ; i--){
             if(arr[i] < mid) break;
             num += arr[i] / mid;
@@ -27,7 +27,7 @@ int upperBound(int left, int right) {
             right = mid - 1; //mid보다 작아져야됨
 
     }
-    return right; // right == left
+    return right;
 }
 
 int main() {
