@@ -1,4 +1,4 @@
-//샘플 코드 + 주석 제출
+//샘플 코드 + 주석 제출 (라이브 코딩)
 #include <iostream>
 #include <vector>
 
